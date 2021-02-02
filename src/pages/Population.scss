@@ -1,0 +1,15 @@
+.population {
+  display: flex;
+  height: 100%;
+  width: 100%;
+
+  &__prefectures {
+    width: 300px;
+    padding: 20px;
+    border-right: 1px solid gray;
+    overflow-y: auto;
+  }
+  &__graph {
+    padding: 20px;
+  }
+}
