@@ -1,30 +1,28 @@
 import React, { useState } from 'react'
-import PrefectureSelectorList from 'src/components/prefectures/PrefectureSelectorList'
-import { Prefecture } from 'src/types/prefectures'
+import SelectorList from 'src/components/commmon/SelectorList'
+import { SelectorItem } from 'src/types/common/selector'
 import './Population.scss'
 
 const Population: React.FC = () => {
   // TODO: 確認用の初期値
-  const defaultPrefectures: Array<Prefecture> = [
+  const defaultPrefectures: Array<SelectorItem> = [
     {
-      prefCode: 1,
-      prefName: '北海道',
+      id: 1,
+      name: '北海道',
     },
     {
-      prefCode: 2,
-      prefName: '青森県',
+      id: 2,
+      name: '青森県',
     },
   ]
-  const [prefectures, setPrefectures] = useState<Array<Prefecture>>(
+  const [prefectures, setPrefectures] = useState<Array<SelectorItem>>(
     defaultPrefectures,
   )
 
   return (
     <div className="population">
       <div className="population__prefectures">
-        <PrefectureSelectorList
-          prefectures={prefectures}
-        ></PrefectureSelectorList>
+        <SelectorList selectors={prefectures}></SelectorList>
       </div>
       <div className="population__graph">グラフを表示する</div>
     </div>
