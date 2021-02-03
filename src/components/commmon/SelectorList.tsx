@@ -19,7 +19,7 @@ const SelectorList: React.FC<Props> = (props) => {
   return (
     <ul className="selector-list">
       {props.selectors.map((item) => (
-        <li className="selector-list__selector">
+        <li className="selector-list__selector" key={item.id}>
           <label>
             <input
               className="selector-list__input"
