@@ -1,2 +1,1 @@
-export type SelectorItem = { id: number; name: string }
-export type Selector = { check: boolean; readonly selector: SelectorItem }
+export type SelectorItem = { id: string; name: string }

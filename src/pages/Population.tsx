@@ -7,11 +7,11 @@ const Population: React.FC = () => {
   // TODO: 確認用の初期値
   const defaultPrefectures: Array<SelectorItem> = [
     {
-      id: 1,
+      id: '1',
       name: '北海道',
     },
     {
-      id: 2,
+      id: '2',
       name: '青森県',
     },
   ]
