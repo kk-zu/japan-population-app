@@ -5,9 +5,9 @@ import {
 } from 'src/types/populations/populations'
 import resasApi from './resasApi'
 
-export async function fetchPopulations(
+export async function fetchPopulation(
   params: PopulationsRequest,
-): Promise<Array<Population>> {
+): Promise<Population> {
   const response = await resasApi
     .get<PopulationsResponse>('/api/v1/population/composition/perYear', {
       params,

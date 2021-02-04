@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchPopulations } from 'src/apis/resas_api/populations'
+import { fetchPopulation } from 'src/apis/resas_api/populations'
 import { fetchPrefectures } from 'src/apis/resas_api/prefectures'
 import SelectorList from 'src/components/commmon/SelectorList'
 import { SelectorItem } from 'src/types/common/selector'
@@ -37,15 +37,16 @@ export default class Population extends React.Component<{}, State> {
   }
 
   async fetchPopulationsByPrefectureIds(prefectureIds: Array<string>) {
+    // TODO: 複数都道府県に対応する
+    // TODO: リクエストの回数制限気をつける
     const requestParams: PopulationsRequest = {
       prefCode: prefectureIds[0],
       cityCode: '-',
     }
-    await fetchPopulations(requestParams)
-      .then((populations) => {
-        console.log(populations)
+    await fetchPopulation(requestParams)
+      .then((population) => {
         this.setState({
-          populations: populations,
+          populations: [population],
         })
       })
       .catch(() => {

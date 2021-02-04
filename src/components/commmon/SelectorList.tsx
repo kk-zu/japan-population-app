@@ -32,7 +32,9 @@ const SelectorList: React.FC<Props> = (props) => {
         <div className="selector-list__title">{props.title}</div>
         <div className="selector-list__description">{props.description}</div>
         <div className="selector-list__button">
-          <button onClick={handleClick}>{props.buttonLabel}</button>
+          <button onClick={handleClick} disabled={selectedIds.length === 0}>
+            {props.buttonLabel}
+          </button>
         </div>
       </div>
       <ul className="selector-list__body">
