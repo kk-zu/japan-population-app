@@ -6,6 +6,7 @@ html {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
@@ -21,4 +22,6 @@ body,
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
