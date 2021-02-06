@@ -22,4 +22,7 @@
   &__input {
     margin-right: 8px;
   }
+  &__selector:not(:last-child) {
+    margin-bottom: 8px;
+  }
 }
