@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import { SelectorItem } from 'src/types/common/selector'
-import './SelectorList.scss'
+import './scss/SelectorList.scss'
 
 type Props = {
   selectors: Array<SelectorItem>
   title: string
   description: string
-  buttonLabel: string
-  onClick: (ids: Array<string>) => void
+  onCheck: (id: string) => void
 }
 
 const SelectorList: React.FC<Props> = (props) => {
@@ -20,10 +19,7 @@ const SelectorList: React.FC<Props> = (props) => {
     } else {
       setSelectedIds([...selectedIds, targetId])
     }
-  }
-
-  const handleClick = () => {
-    props.onClick(selectedIds)
+    props.onCheck(targetId)
   }
 
   return (
@@ -31,11 +27,6 @@ const SelectorList: React.FC<Props> = (props) => {
       <div className="selector-list__header">
         <div className="selector-list__title">{props.title}</div>
         <div className="selector-list__description">{props.description}</div>
-        <div className="selector-list__button">
-          <button onClick={handleClick} disabled={selectedIds.length === 0}>
-            {props.buttonLabel}
-          </button>
-        </div>
       </div>
       <ul className="selector-list__body">
         {props.selectors.map((item) => (
