@@ -17,5 +17,6 @@
     "baseUrl": ".",
     "jsx": "react-jsx"
   },
-  "include": ["src", "jest.config.js"]
+  "include": ["src", "jest.config.js"],
+  "exclude": ["node_modules"]
 }

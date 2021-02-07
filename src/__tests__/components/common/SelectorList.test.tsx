@@ -7,8 +7,7 @@ describe('props', () => {
   const commonProps = {
     title: 'title',
     description: 'description',
-    buttonLabel: 'button',
-    onClick: () => {
+    onCheck: () => {
       return undefined
     },
   }
@@ -30,7 +29,7 @@ describe('props', () => {
   })
 })
 
-describe('onClick', () => {
+describe('onCheck', () => {
   const commonProps = {
     selectors: [
       { id: '1', name: '北海道' },
@@ -41,25 +40,14 @@ describe('onClick', () => {
     buttonLabel: 'button',
   }
   test('call onClick', () => {
-    const onClick = jest.fn()
+    const onCheck = jest.fn()
 
     const { container } = render(
-      <SelectorList onClick={onClick} {...commonProps} />,
+      <SelectorList onCheck={onCheck} {...commonProps} />,
     )
     const button = container.querySelector('button')
     container.querySelector('input')?.click()
-    expect(button?.hasAttribute('disabled')).toBeFalsy()
     button?.click()
-    expect(onClick).toHaveBeenCalled()
-  })
-
-  test('disabled onClick', () => {
-    const onClick = jest.fn()
-
-    const { container } = render(
-      <SelectorList onClick={onClick} {...commonProps} />,
-    )
-    const button = container.querySelector('button')
-    expect(button?.hasAttribute('disabled')).toBeTruthy()
+    expect(onCheck).toHaveBeenCalled()
   })
 })

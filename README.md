@@ -19,3 +19,15 @@
 ```
 REACT_APP_RESAS_API_KEY={api-key}
 ```
+
+---
+
+### WARNING
+
+コンソールに警告が出ますが、以下の通りです。
+
+```
+Warning: React.createFactory() is deprecated and will be removed in a future major release. Consider using JSX or use React.createElement() directly instead.
+```
+
+https://github.com/plouc/nivo/issues/884
