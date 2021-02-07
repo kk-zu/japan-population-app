@@ -1,0 +1,28 @@
+.selector-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  &__header {
+    padding: 16px;
+    border-bottom: 1px solid lightgray;
+  }
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  &__description {
+    font-size: 14px;
+    color: gray;
+  }
+  &__body {
+    padding: 16px 16px 16px 24px;
+    overflow: auto;
+  }
+  &__input {
+    margin-right: 8px;
+  }
+  &__selector:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}

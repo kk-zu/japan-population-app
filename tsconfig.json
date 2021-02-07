@@ -14,10 +14,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "paths": {
-      "~/*": ["./src/*"]
-    }
+    "baseUrl": ".",
+    "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["src", "jest.config.js"],
+  "exclude": ["node_modules"]
 }
