@@ -2,7 +2,6 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import LineGraph from '../../../components/commmon/LineGraph'
 import { LineGraphItem } from 'src/types/common/graph'
-import { act } from 'react-dom/test-utils'
 
 describe('props', () => {
   const emptyText = '空です'
